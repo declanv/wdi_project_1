@@ -1,0 +1,17 @@
+<h2>Users</h2>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <h4 class="user_name"><%= link_to user.name, "/users/#{user.id}" %></h4>
+      <p>
+        <ul class="timelines">
+        <% user.timelines.each do |timeline| %>
+          <li class="timeline_title">
+            <%= link_to timeline.title, "/timelines/#{timeline.id}" %>
+          </li>
+        <% end %>
+        </ul>
+      </p>
+    </li>
+  <% end %>
+</ul>

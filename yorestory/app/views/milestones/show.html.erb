@@ -1,0 +1,24 @@
+<h2><%= @milestone.title %></h2>
+<div class="milestone_body">
+  <table>
+  <caption>Milestones</caption>
+  <thead>
+      <tr>
+        <th>quantity</th>
+        <th>name</th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @milestone.years.each do |year| %>
+      <tr>
+        <td><%= year.title %> <%= year.headline %></td>
+        <td><%= year.events %></td>
+        <td><%= year.weather %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+  <p class="milestone_content">
+    <%= @milestone.content %>
+  </p>
+</div>

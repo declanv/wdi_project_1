@@ -1,0 +1,7 @@
+<%= form_for @timeline do |f| %>
+  <%= f.text_field :title, {placeholder: "title"} %>
+  <%= f.text_field :begin_date, {placeholder: "birth year"} %>
+   <%= f.text_field :end_date, {placeholder: "death year or present"} %>
+
+  <%= f.submit %>
+<% end %>

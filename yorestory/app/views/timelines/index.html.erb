@@ -1,0 +1,29 @@
+
+<div class="section group">
+
+<h2>Timelines</h2>
+</div>
+
+<div class="section group">
+<!-- LEFT-HAND COLUMN -->
+  <div class="col span_1_of_2_left">
+  <ul class="timelines">
+    <% @timelines.each do |timeline| %>
+      <li>
+        <h4><%= link_to timeline.title, "/timelines/#{timeline.id}" %></h4>
+        <p>
+          by <%= timeline.user.name %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+
+  <div class="col span_1_of_2">
+    <%= render partial: "timelineform", locals: { timeline_local: @timeline, user: @user } %>
+  </div>
+
+ </div>
+
+
+<!-- RIGHT-HAND COLUMN -->

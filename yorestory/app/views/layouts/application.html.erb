@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yorestory</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="wrapper">
+
+  <div id="headcontainer">
+    <header>
+      <h1>Yorestory</h1>
+      <hr class="fancy-line"></hr>
+        <nav>
+
+        <%= link_to "users", users_path %>
+        <%= "| Welcome, #{current_user.name}" if current_user %>
+        </nav>
+    </header>
+  </div>
+
+  <div id="maincontentcontainer">
+    <div id="maincontent">
+
+<%= yield %>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
