@@ -1,74 +1,74 @@
 class Timeline < ActiveRecord::Base
 
- include HTTParty
-
 belongs_to :user
 
 has_many :years, through: :milestones
 
 has_many :milestones
 
+# include HTTParty
+
 #     def set_milestones(begin_date, end_date)
 
-    before_create :year_event
-  def get_events!(year_input)
+#     before_create :year_event
+#   def get_events!(year_input)
 
-   url = "http://api.wolframalpha.com/v2/query?input=events%20#{year_input}&appid=XXXX"
-    response = HTTParty.get(url)
-    event_url = response["queryresult"]["pod"][1]["subpod"]
+#    url = "http://api.wolframalpha.com/v2/query?input=events%20#{year_input}&appid=XXXX"
+#     response = HTTParty.get(url)
+#     event_url = response["queryresult"]["pod"][1]["subpod"]
 
-     # ^ This will return an array of hashes. Once I've got the array, I can probably strip out the plaintext from each of the hashes inside...that way I don't have to make a new api call for each hash's content.
+#      # ^ This will return an array of hashes. Once I've got the array, I can probably strip out the plaintext from each of the hashes inside...that way I don't have to make a new api call for each hash's content.
 
-    #^ Ask Neel if the above will make API calls each time I search within the hash, or if once I've got it...I've got it, and can search throughout.
+#     #^ Ask Neel if the above will make API calls each time I search within the hash, or if once I've got it...I've got it, and can search throughout.
 
-    event_1 = event_url[0]["plaintext"]
-    event_2 = event_url[1]["plaintext"]
-    event_3 = event_url[2]["plaintext"]
-    event_4 = event_url[3]["plaintext"]
-    event_5 = event_url[4]["plaintext"]
+#     event_1 = event_url[0]["plaintext"]
+#     event_2 = event_url[1]["plaintext"]
+#     event_3 = event_url[2]["plaintext"]
+#     event_4 = event_url[3]["plaintext"]
+#     event_5 = event_url[4]["plaintext"]
 
-    self.years << Year.create({
-      title: year_input
-      event_1: event_1
-      event_2: event_2
-      event_3: event_3
-      event_4: event_4
-      event_5: event_5
-      })
-
-
-    #^ This is an attempt to create an instance of a year based on the birthyear input, and save it to the database.
+#     self.years << Year.create({
+#       title: year_input
+#       event_1: event_1
+#       event_2: event_2
+#       event_3: event_3
+#       event_4: event_4
+#       event_5: event_5
+#       })
 
 
-    year_input.gsub!(/#{year_input}/, event_url)
-  end
-
-  private
-    def year_event
-      self.input_1 = get_photo!(self.input_1)
-      self.input_3 = get_photo!(self.input_3)
-      self.input_5 = get_photo!(self.input_5)
-    end
-end
+#     #^ This is an attempt to create an instance of a year based on the birthyear input, and save it to the database.
 
 
-  def add_milestone(begin_date, end_date, year_title)
-    #
-    year = Year.find_by_title(year_title)
+#     year_input.gsub!(/#{year_input}/, event_url)
+#   end
 
-    # if milestone is found...
-    if year
-      # get this instance of recipe's own portions
-      self.milestones << Milestone.create({
-        title: title,
-        year: year_title
-        })
-    else
-      # shows this in server log
-      puts "Failed to create milestone! No year with title #{year_title}"
-      nil
-    end
-  end
+#   private
+#     def year_event
+#       self.input_1 = get_photo!(self.input_1)
+#       self.input_3 = get_photo!(self.input_3)
+#       self.input_5 = get_photo!(self.input_5)
+#     end
+# end
+
+
+  # def add_milestone(begin_date, end_date, year_title)
+  #   #
+  #   year = Year.find_by_title(year_title)
+
+  #   # if milestone is found...
+  #   if year
+  #     # get this instance of recipe's own portions
+  #     self.milestones << Milestone.create({
+  #       title: title,
+  #       year: year_title
+  #       })
+  #   else
+  #     # shows this in server log
+  #     puts "Failed to create milestone! No year with title #{year_title}"
+  #     nil
+  #   end
+  # end
 end
 # range = end_date - begin_date
 
