@@ -4,7 +4,7 @@ belongs_to :user
 
 has_many :years, through: :milestones
 
-has_many :milestones, :foreign_key => 'title', :primary_key => 'title'
+has_many :milestones, :foreign_key => 'year_name', :primary_key => 'year_name'
 
 
 # def set_milestones(begin_date, end_date)

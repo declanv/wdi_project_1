@@ -8,9 +8,11 @@
 
 
 #Make years:
-Milestone.delete_all
+# Milestone.delete_all
+# Timeline.delete_all
+# Year.delete_all
 
-(1900..1912).each do |n|
+(1900..1910).each do |n|
 
    # url = "http://api.wolframalpha.com/v2/query?input=events%20#{n}&appid=XXXX"
    #  response = HTTParty.get(url)
@@ -37,14 +39,15 @@ Milestone.delete_all
    #    event_2: event_2,
    #    event_3: event_3,
    #    event_4: event_4,
-   #    event_5: event_5
+   #    event_5: event_5,
+   #    year_name: "#{n}"
    #    })
 
-
     Milestone.create({
-year_name: "birth",
-title: "#{n}"
-  })
+    year_name: n,
+    title: "birth"
+
+    })
 
 
 end

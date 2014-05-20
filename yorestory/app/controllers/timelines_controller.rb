@@ -11,16 +11,34 @@ class TimelinesController < ApplicationController
   def show
     @timeline = Timeline.find(params[:id])
 
-    milestone = Milestone.find(params[:id])
-    @milestone_name = milestone.year_name
-    @milestone_title = milestone.title.upcase
+    @milestone = Milestone.find_by_timeline_id(params[:id])
 
-    year = Year.find(params[:id])
-    @event_1 = year.event_1
-    @event_2 = year.event_2
-    @event_3 = year.event_3
-    @event_4 = year.event_4
-    @event_5 = year.event_5
+    @year = Year.find_by_milestone_id
+    # @milestone_name = milestone.year_name
+    # @milestone_title = milestone.title.upcase
+
+    # # y = Year.new
+
+    # # Milestone 1 info:
+    # year1 = Year.find(params[:id])
+    # @year_1_event_1 = year1.event_1
+    # @year_1_event_2 = year1.event_2
+    # @year_1_event_3 = year1.event_3
+    # @year_1_event_4 = year1.event_4
+    # @year_1_event_5 = year1.event_5
+
+    # #Milestone 2 info:
+
+    # yearname_1 = year1.year_name
+    # yearname_2 = yearname_1 + 2
+    # #Not allowing me to search year by the year_name column.
+    # year2 = Year.find_by(year_name: yearname_2)
+    # @year2_name = year2.title
+    # @year_2_event_1 = year2.event_1
+    # @year_2_event_2 = year2.event_2
+    # @year_2_event_3 = year2.event_3
+    # @year_2_event_4 = year2.event_4
+    # @year_2_event_5 = year2.event_5
 
   end
 
@@ -28,16 +46,15 @@ def create
 
   Timeline.create(timeline_attributes)
 
-# Trying to pass in the current timeline id to the timeline_id
-  # @timeline = Timeline.find(params[:id])
-  # id = @timeline.id
+  timeline_id = Timeline.last.id
 
-  Milestone.create({
-    year_name: "birth",
-    title: "#{begin_date}",
-    timeline_id: id,
-    })
+  year_id = Year.find_by_year_name(params[:timeline][:begin_date].to_i).id
 
+  end_date = params[:timeline][:end_date].to_i
+
+  begin_date = params[:timeline][:begin_date].to_i
+
+  Milestone.build(end_date, begin_date, year_id, timeline_id)
 
   redirect_to timelines_path
 end
