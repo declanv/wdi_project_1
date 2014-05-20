@@ -45,4 +45,12 @@ get "/milestones/:id/edit" => "milestones#edit", as: :edit_milestone
   # process form data for UPDATE or edit actions
 patch "/milestones/:id" => "milestones#update"
 
+# # Copy/pasted from: http://railscasts.com/episodes/250-authentication-from-scratch
+# get "log_out" => "sessions#destroy", :as => "log_out"
+# get "log_in" => "sessions#new", :as => "log_in"
+# get "sign_up" => "users#new", :as => "sign_up"
+# root :to => "users#new"
+# resources :users
+# resources :sessions
+
 end

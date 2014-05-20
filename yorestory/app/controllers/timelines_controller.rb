@@ -28,6 +28,17 @@ def create
 
   Timeline.create(timeline_attributes)
 
+# Trying to pass in the current timeline id to the timeline_id
+  # @timeline = Timeline.find(params[:id])
+  # id = @timeline.id
+
+  Milestone.create({
+    year_name: "birth",
+    title: "#{begin_date}",
+    timeline_id: id,
+    })
+
+
   redirect_to timelines_path
 end
 

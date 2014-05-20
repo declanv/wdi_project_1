@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+# Copy/Pasted from http://railscasts.com/episodes/250-authentication-from-scratch
+
 
 #Copy/pasted in from http://homepages.abdn.ac.uk/pang.wei/pages/WAD/Practicals/userauthentication/Web%20Application%20Development%20%20Advanced%20Ruby%20on%20Rails%20-%20User%20authentication.html
 #Should allow the user to log out by stripping the id from the route and then redirecting to

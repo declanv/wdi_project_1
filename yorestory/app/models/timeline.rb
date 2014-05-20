@@ -4,8 +4,19 @@ belongs_to :user
 
 has_many :years, through: :milestones
 
-has_many :milestones
+has_many :milestones, :foreign_key => 'title', :primary_key => 'title'
 
+
+# def set_milestones(begin_date, end_date)
+
+# Milestone.create({
+#   year_id:
+#   year_name:
+#   title:
+#   })
+
+
+end
 # include HTTParty
 
 #     # def set_milestones(begin_date, end_date)
@@ -40,7 +51,6 @@ has_many :milestones
 
 #   end
 
-end
 #     #^ This is an attempt to create an instance of a year based on the birthyear input, and save it to the database.
 
 

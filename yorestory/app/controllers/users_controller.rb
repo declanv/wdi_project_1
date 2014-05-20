@@ -17,26 +17,35 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_hash = params[:user]
-    if user_hash[:password] == user_hash[:password_confirmation]
-      user = User.new
-      user.password = user_hash[:password]
-      user.name = user_hash[:name]
-      user.email = user_hash[:email]
-      user.bio = user_hash[:bio]
-      user.photo = user_hash[:photo]
-      user.save
 
-      if user.valid?
-        # log the user in when they register
-        @current_user = user
-        redirect_to "/user/login"
-      else
-        render text: "Email is already taken!"
-      end
-    else
-      render text: "Passwords Did Not Match!"
-    end
+      @user = User.new(params[:user])
+  if @user.save
+    redirect_to root_url, :notice => "Signed up!"
+  else
+    render "new"
+  end
+
+    #Potentially need to swap in the new code from: http://railscasts.com/episodes/250-authentication-from-scratch
+    # user_hash = params[:user]
+    # if user_hash[:password] == user_hash[:password_confirmation]
+    #   user = User.new
+    #   user.password = user_hash[:password]
+    #   user.name = user_hash[:name]
+    #   user.email = user_hash[:email]
+    #   user.bio = user_hash[:bio]
+    #   user.photo = user_hash[:photo]
+    #   user.save
+
+    #   if user.valid?
+    #     # log the user in when they register
+    #     @current_user = user
+    #     redirect_to "/user/login"
+    #   else
+    #     render text: "Email is already taken!"
+    #   end
+    # else
+    #   render text: "Passwords Did Not Match!"
+    # end
     # render json: params
   end
 
