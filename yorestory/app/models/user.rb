@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     Password.new(self.hashed_password)
   end
 
-  # check's a password
+  # checks a password
   def check_password(password_input)
     # does the password going in, match the DB pass?
     password_input == self.password
@@ -43,6 +43,5 @@ class User < ActiveRecord::Base
     puts "Did not find email"
     return nil
   end
-
 
 end

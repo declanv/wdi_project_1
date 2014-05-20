@@ -10,8 +10,18 @@ class TimelinesController < ApplicationController
 
   def show
     @timeline = Timeline.find(params[:id])
-    # The below line is only necessary for a milestone form to work:
-    # @milestone = Milestone.new
+
+    milestone = Milestone.find(params[:id])
+    @milestone_name = milestone.year_name
+    @milestone_title = milestone.title.upcase
+
+    year = Year.find(params[:id])
+    @event_1 = year.event_1
+    @event_2 = year.event_2
+    @event_3 = year.event_3
+    @event_4 = year.event_4
+    @event_5 = year.event_5
+
   end
 
 def create

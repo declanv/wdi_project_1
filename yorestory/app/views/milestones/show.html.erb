@@ -4,16 +4,15 @@
   <caption>Milestones</caption>
   <thead>
       <tr>
-        <th>quantity</th>
-        <th>name</th>
+        <th>year</th>
       </tr>
   </thead>
   <tbody>
     <% @milestone.years.each do |year| %>
       <tr>
         <td><%= year.title %> <%= year.headline %></td>
-        <td><%= year.events %></td>
-        <td><%= year.weather %></td>
+        <td><%= year.event_1 %></td>
+        <td><%= year.event_2 %></td>
       </tr>
       <% end %>
   </tbody>

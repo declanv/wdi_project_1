@@ -4,6 +4,23 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
+#Copy/pasted in from http://homepages.abdn.ac.uk/pang.wei/pages/WAD/Practicals/userauthentication/Web%20Application%20Development%20%20Advanced%20Ruby%20on%20Rails%20-%20User%20authentication.html
+#Should allow the user to log out by stripping the id from the route and then redirecting to
+#the login page.
+
+   protected
+
+    def login_required
+      return true if User.find_by_id(session[:user_id])
+      access_denied
+      return false
+    end
+    def access_denied
+      flash[:error] = 'Oops. You need to login before you can view that page.'
+      redirect_to "/user/login"
+    end
+
+
   def authenticate_with_basic_auth
     # this will be called from controller before any action
     unless @current_user

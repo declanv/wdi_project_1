@@ -14,10 +14,12 @@
     <header>
       <h1>Yorestory</h1>
       <hr class="fancy-line"></hr>
-        <nav>
+        <nav class= "nav">
+          <p>
 
-        <%= link_to "users", users_path %>
+        <%= link_to "users", users_path %> | <%= link_to "timelines", "timelines"  %> | <%= link_to "logout", "users/logout"  %>
         <%= "| Welcome, #{current_user.name}" if current_user %>
+      </p>
         </nav>
     </header>
   </div>

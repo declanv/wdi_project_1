@@ -8,5 +8,9 @@ class Milestone < ActiveRecord::Base
 
   # finds a year and adds it to a milestone
 
+def show
 
+  @milestone = Milestone.find(params[:id])
+  @milestone.years
+end
 end

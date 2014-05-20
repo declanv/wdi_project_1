@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-root to: "users#index"
+root to: "home#index"
 
 # users routes
 
@@ -14,7 +14,11 @@ get "/users" => "users#index"
 
  get "user/login" => "users#login"
 
+ get "users/logout" => "users#logout", :as => "logout"
+
  post "/user/login" => "users#process_login"
+
+
 
 # timelines routes
 
@@ -29,6 +33,16 @@ patch "/timelines/:id" => "timelines#update"
 
 post "/timelines" => "timelines#create"
 
+# milestones routes
+post "/milestones" => "milestones#create"
 
+  # get one milestone
+get "/milestones/:id" => "milestones#show", as: :milestone
+
+  # get EDIT form for milestones
+get "/milestones/:id/edit" => "milestones#edit", as: :edit_milestone
+
+  # process form data for UPDATE or edit actions
+patch "/milestones/:id" => "milestones#update"
 
 end

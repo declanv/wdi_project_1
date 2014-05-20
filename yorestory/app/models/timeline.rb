@@ -8,12 +8,12 @@ has_many :milestones
 
 # include HTTParty
 
-#     def set_milestones(begin_date, end_date)
+#     # def set_milestones(begin_date, end_date)
 
-#     before_create :year_event
-#   def get_events!(year_input)
+#     # before_create :year_event
+#   def get_events!(:begin_date)
 
-#    url = "http://api.wolframalpha.com/v2/query?input=events%20#{year_input}&appid=XXXX"
+#    url = "http://api.wolframalpha.com/v2/query?input=events%20#{:begin_date}&appid=XXXX"
 #     response = HTTParty.get(url)
 #     event_url = response["queryresult"]["pod"][1]["subpod"]
 
@@ -27,7 +27,9 @@ has_many :milestones
 #     event_4 = event_url[3]["plaintext"]
 #     event_5 = event_url[4]["plaintext"]
 
-#     self.years << Year.create({
+#     if timeline
+
+#     Year.create({
 #       title: year_input
 #       event_1: event_1
 #       event_2: event_2
@@ -36,7 +38,9 @@ has_many :milestones
 #       event_5: event_5
 #       })
 
+#   end
 
+end
 #     #^ This is an attempt to create an instance of a year based on the birthyear input, and save it to the database.
 
 
@@ -69,7 +73,7 @@ has_many :milestones
   #     nil
   #   end
   # end
-end
+
 # range = end_date - begin_date
 
 #   birth = begin_date += 1

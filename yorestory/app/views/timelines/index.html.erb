@@ -11,9 +11,6 @@
     <% @timelines.each do |timeline| %>
       <li>
         <h4><%= link_to timeline.title, "/timelines/#{timeline.id}" %></h4>
-        <p>
-          by <%= timeline.user.name %>
-        </p>
       </li>
     <% end %>
   </ul>

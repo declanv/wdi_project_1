@@ -5,3 +5,4 @@ has_many :timelines, through: :milestones
 has_many :milestones
 
 end
+

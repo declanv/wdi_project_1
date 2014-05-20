@@ -1,21 +1,23 @@
 <h2 class="timeline_title"><%= @timeline.title %></h2>
+<h5>  <%= @timeline.begin_date %> through
+  <%= @timeline.end_date %> </h5>
 <p>
   <%= link_to "edit", "/timelines/#{@timeline.id}/edit" %>
 </p>
+<h4> <%= @milestone_title %> <%= @milestone_name %> </h4>
+
 <p class="timeline_description">
-  <%= @timeline.begin_date %> through
-  <%= @timeline.end_date %>
+  <ul>
+  <li><%= @event_1 %></li>
+  <li><%= @event_2 %></li>
+  <li><%= @event_3 %></li>
+  <li><%= @event_4 %></li>
+  <li><%= @event_5 %></li>
+  </ul>
 </p>
-<h3>Timelines</h3>
-<%= render partial: "milestones/milestoneform", locals: { milestone_local: @milestone, timeline_id: @timeline.id }%>
-<ul class="milestones">
-  <% @timeline.milestone.order(id: :desc).each do |milestone| %>
-    <li class="milestone">
-      <h4><%= milestone.title %></h4>
-      <p>
-        <%= link_to "show", "/milestone/#{milestone.id}" %> |
-        <%= link_to "edit", "/milestones/#{milestone.id}/edit" %>
-      </p>
-    </li>
-  <% end %>
+
+
+
+
+
 </ul>
