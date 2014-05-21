@@ -3,10 +3,10 @@
 
 <h2>Timelines</h2>
 </div>
-
 <div class="section group">
 <!-- LEFT-HAND COLUMN -->
-  <div class="col span_1_of_2_left">
+  <div class="col span_1_of_3_left">
+    <%= render partial: "timelineform", locals: { timeline_local: @timeline, user: @user } %>
   <ul class="timelines">
     <% @timelines.each do |timeline| %>
       <li>
@@ -16,9 +16,6 @@
   </ul>
   </div>
 
-  <div class="col span_1_of_2">
-    <%= render partial: "timelineform", locals: { timeline_local: @timeline, user: @user } %>
-  </div>
 
  </div>
 

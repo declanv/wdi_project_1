@@ -1,19 +1,16 @@
 <div class="section group">
-<!-- LEFT-HAND COLUMN -->
- <div class="col span_3_of_3">
 
-<h2 class="timeline_title"><%= @timeline.title %></h2>
+
+
+<h2 class="timeline_title"><%= @timeline.title %></h2> <p class="edit"><%= link_to "edit", "/timelines/#{@timeline.id}/edit" %></p>
 <h5>  <%= @timeline.begin_date %> through
   <%= @timeline.end_date %> </h5>
-<p>
-  <%= link_to "edit", "/timelines/#{@timeline.id}/edit" %>
-</p>
 <h4> <%= @milestone_title %> <%= @milestone_name %> </h4>
 </div>
  <div class="col span_1_of_3_left">
 <div class= "timeline_border" >
 
-  <ul class="timeline_border">
+  <ul class="milestone_year">
   <h4><%= @year_1 %></h4>
   <li><%= @year_2 %></li>
   <li><%= @year_3 %></li>
@@ -24,10 +21,9 @@
   <li><%= @year_8 %></li>
   <li><%= @year_9 %></li>
   <li><%= @year_10 %></li>
-
   </ul>
 </div>
-</p>
+
 
 </div>
 <div class="col span_1_of_3_right">

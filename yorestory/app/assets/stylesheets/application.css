@@ -34,6 +34,12 @@ h2{
   font-family: 'Quicksand', sans-serif;
    color: #2B2015;
 }
+h2.timeline_title{
+  font-family: 'Quicksand', sans-serif;
+   color: #2B2015;
+   padding: 0px;
+   margin: 0px;
+}
 
 h3{
   font-family: 'Quicksand', sans-serif;
@@ -69,6 +75,11 @@ li.triangle:before {
 
 p{
   font-family: 'Quicksand', sans-serif;
+}
+p.edit{
+  font-family: 'Quicksand', sans-serif;
+  padding: 0px;
+  margin: 0px;
 }
 
 nav.nav{
@@ -116,7 +127,11 @@ size: 500px;
 }
 */
 ul.timeline_border {
- border-color: white;
+  border-left: thin solid rgba(255, 255, 255, 0.5);
+
+}
+
+ul.milestone_year {
 }
 
 li.no_decoration {

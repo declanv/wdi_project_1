@@ -11,8 +11,9 @@
 
 .span_1_of_3_left {
 	width: 32.26%;
-	border-right: thin solid rgba(255, 255, 255, 0.5);
 	margin: 0px;
+	text-align: right;
+
 }
 
 .span_1_of_3_right {
