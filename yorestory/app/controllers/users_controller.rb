@@ -48,15 +48,15 @@ class UsersController < ApplicationController
   def process_login
     # process login form
 
-    email = params[:email]
+    name = params[:name]
     password = params[:password]
 
-    @current_user = User.authenticated?(email, password)
+    @current_user = User.authenticated?(name, password)
 
     if @current_user
       redirect_to timelines_path
     else
-      render text: "Login Failed! Invalid email or password!"
+      render text: "Login Failed! Invalid name or password!"
     end
 
   end

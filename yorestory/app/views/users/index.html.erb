@@ -1,9 +1,20 @@
-<h2>Users</h2>
+<nav class= "nav">
+          <p>
+
+        <%= link_to "users", users_path %> | <%= link_to "timelines", timelines_path  %> | <%= link_to "logout", "user/logout"  %><br>
+        <%= " Welcome, #{current_user.name}" if current_user %>
+      </p>
+        </nav>
+
 <ul class="users">
-  <%= link_to "users", users_path %> | <%= link_to "timelines", timelines_path  %>
   <% @users.each do |user| %>
     <li>
       <h4 class="user_name"><%= link_to user.name, "/users/#{user.id}" %></h4>
+
+<p class="user_bio">
+  <%= user.bio %>
+</p>
+<img class="user_photo" src=<%= user.photo %>>
       <p>
         <ul class="timelines">
         <% user.timelines.each do |timeline| %>
