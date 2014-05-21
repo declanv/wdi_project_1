@@ -17,10 +17,11 @@
         <nav class= "nav">
           <p>
 
-        <%= link_to "users", users_path %> | <%= link_to "timelines", timelines_path  %> <!-- | <%= link_to "logout", "users/logout"  %> -->
-        <%= "| Welcome, #{current_user.name}" if current_user %>
+        <%= link_to "users", users_path %> | <%= link_to "timelines", timelines_path  %> | <%= link_to "logout", "users/logout"  %><br>
+        <%= " Welcome, #{current_user.name}" if current_user %>
       </p>
         </nav>
+
     </header>
   </div>
 

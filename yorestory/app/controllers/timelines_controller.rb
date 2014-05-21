@@ -9,9 +9,27 @@ class TimelinesController < ApplicationController
   end
 
   def show
+
+
     @timeline = Timeline.find(params[:id])
 
-    @milestone = Milestone.where(timeline_id: params[:id])
+    milestone = Milestone.where(timeline_id: params[:id])
+
+
+    @year_1 = milestone[0].year_name
+    @year_2 = milestone[1].year_name
+    @year_3 = milestone[2].year_name
+    @year_4 = milestone[3].year_name
+    @year_5 = milestone[4].year_name
+    @year_6 = milestone[5].year_name
+    @year_7 = milestone[6].year_name
+    @year_8 = milestone[7].year_name
+    @year_9 = milestone[8].year_name
+    @year_10 = milestone[9].year_name
+
+
+    @year_date_1 = Year.find_by_title(@year_1.to_s)
+    @year_date_2 = Year.find_by_title(@year_2.to_s)
 
     # @year = Year.find_by_milestone_id
     # @milestone_name = milestone.year_name

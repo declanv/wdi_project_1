@@ -1,3 +1,7 @@
+<div class="section group">
+<!-- LEFT-HAND COLUMN -->
+  <div class="col span_1_of_2_left">
+
 <h2 class="timeline_title"><%= @timeline.title %></h2>
 <h5>  <%= @timeline.begin_date %> through
   <%= @timeline.end_date %> </h5>
@@ -5,37 +9,34 @@
   <%= link_to "edit", "/timelines/#{@timeline.id}/edit" %>
 </p>
 <h4> <%= @milestone_title %> <%= @milestone_name %> </h4>
+<div class= "timeline_border" >
 
-<p class="timeline_description">
-  <ul>
-  <li><%= @milestone[0].year_name %></li>
-  <li><%= @milestone[1].year_name %></li>
-  <li><%= @milestone[2].year_name %></li>
-  <li><%= @milestone[3].year_name %></li>
-  <li><%= @milestone[4].year_name %></li>
-  <li><%= @milestone[5].year_name %></li>
-  <li><%= @milestone[6].year_name %></li>
-  <li><%= @milestone[7].year_name %></li>
-  <li><%= @milestone[8].year_name %></li>
-  <li><%= @milestone[9].year_name %></li>
+  <ul class="timeline_border">
+  <h4><%= @year_1 %></h4>
+  <li><%= @year_date_1.event_1 %></li>
+  <li><%= @year_date_1.event_2 %></li>
+  <li><%= @year_date_1.event_3 %></li>
+  <li><%= @year_date_1.event_4 %></li>
+  <li><%= @year_date_1.event_5 %></li>
+  <li><%= @year_2 %></li>
+  <li><%= @year_date_2.event_1 %></li>
+  <li><%= @year_date_2.event_2 %></li>
+  <li><%= @year_date_2.event_3 %></li>
+  <li><%= @year_date_2.event_4 %></li>
+  <li><%= @year_date_2.event_5 %></li>
+  <li><%= @year_3 %></li>
+
+  <li><%= @year_4 %></li>
+
+  <li><%= @year_5 %></li>
+  <li><%= @year_6 %></li>
+  <li><%= @year_7 %></li>
+  <li><%= @year_8 %></li>
+  <li><%= @year_9 %></li>
+  <li><%= @year_10 %></li>
 
   </ul>
 </p>
 
-<h4> <%= @milestone_title %> <%= @year2_name %> </h4>
-
-<p class="timeline_description">
-  <ul>
-   <li><%= @year_2_event_1 %></li>
-  <li><%= @year_2_event_2 %></li>
-  <li><%= @year_2_event_3 %></li>
-  <li><%= @year_2_event_4 %></li>
-  <li><%= @year_2_event_5 %></li>
-  </ul>
-</p>
-
-
-
-
-
-</ul>
+</div>
+</div>

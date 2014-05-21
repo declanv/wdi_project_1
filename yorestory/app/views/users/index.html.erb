@@ -1,5 +1,6 @@
 <h2>Users</h2>
 <ul class="users">
+  <%= link_to "users", users_path %> | <%= link_to "timelines", timelines_path  %>
   <% @users.each do |user| %>
     <li>
       <h4 class="user_name"><%= link_to user.name, "/users/#{user.id}" %></h4>

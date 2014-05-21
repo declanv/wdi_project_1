@@ -111,3 +111,6 @@ width: 1px;
 size: 500px;
 }
 */
+ul.timeline_border {
+ border-color: white;
+}

@@ -34,7 +34,7 @@ class MilestonesController < ApplicationController
   private
 
   def milestone_attributes
-    params.require(:recipe).permit(:title, :content, :timeline_id)
+    params.require(:milestone).permit(:title, :content, :timeline_id)
   end
 
 end
