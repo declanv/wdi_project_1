@@ -52,9 +52,9 @@ ul {
     padding: 0 1em;
     list-style: none;
 }
-li:before {
+li.triangle:before {
     content: "";
-    border-color: transparent #111;
+    border-color: transparent #fff;
     border-style: solid;
     border-width: 0.35em 0 0.35em 0.45em;
     display: block;
@@ -106,6 +106,10 @@ body, hr.fancy-line:after {
     background: #627F80;
 }
 
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
 /*hr.vertical-line {
 width: 1px;
 size: 500px;
@@ -113,4 +117,8 @@ size: 500px;
 */
 ul.timeline_border {
  border-color: white;
+}
+
+li.no_decoration {
+text-decoration: none;
 }

@@ -1,6 +1,6 @@
 <div class="section group">
 <!-- LEFT-HAND COLUMN -->
-  <div class="col span_1_of_2_left">
+ <div class="col span_3_of_3">
 
 <h2 class="timeline_title"><%= @timeline.title %></h2>
 <h5>  <%= @timeline.begin_date %> through
@@ -9,25 +9,15 @@
   <%= link_to "edit", "/timelines/#{@timeline.id}/edit" %>
 </p>
 <h4> <%= @milestone_title %> <%= @milestone_name %> </h4>
+</div>
+ <div class="col span_1_of_3_left">
 <div class= "timeline_border" >
 
   <ul class="timeline_border">
   <h4><%= @year_1 %></h4>
-  <li><%= @year_date_1.event_1 %></li>
-  <li><%= @year_date_1.event_2 %></li>
-  <li><%= @year_date_1.event_3 %></li>
-  <li><%= @year_date_1.event_4 %></li>
-  <li><%= @year_date_1.event_5 %></li>
   <li><%= @year_2 %></li>
-  <li><%= @year_date_2.event_1 %></li>
-  <li><%= @year_date_2.event_2 %></li>
-  <li><%= @year_date_2.event_3 %></li>
-  <li><%= @year_date_2.event_4 %></li>
-  <li><%= @year_date_2.event_5 %></li>
   <li><%= @year_3 %></li>
-
   <li><%= @year_4 %></li>
-
   <li><%= @year_5 %></li>
   <li><%= @year_6 %></li>
   <li><%= @year_7 %></li>
@@ -36,7 +26,17 @@
   <li><%= @year_10 %></li>
 
   </ul>
+</div>
 </p>
 
+</div>
+<div class="col span_1_of_3_right">
+  <ul class="timeline_border">
+  <li class="triangle"><%= @year_date_1.event_1 %></li>
+  <li class="triangle"><%= @year_date_1.event_2 %></li>
+  <li class="triangle"><%= @year_date_1.event_3 %></li>
+  <li class="triangle"><%= @year_date_1.event_4 %></li>
+  <li class="triangle"><%= @year_date_1.event_5 %></li>
+  <ul class="timeline_border">
 </div>
 </div>
